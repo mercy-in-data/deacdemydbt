@@ -16,10 +16,65 @@ models:
                   severity: warn
       - name: emp_salary
         data_tests:
-          - salary_check      
+          - salary_check
+  - name: customer
+    description: "DBT Model for the customer table"
+  - name: customer_vw
+    description: "DBT Model for the customer view"
+  - name: sales
+    description: "DBT model for the sales table"
+  - name: product
+    description: "DBT Model for the product table"
+  - name: purchase
+    description: "DBT model for the purchase table" 
+  - name: clean_orders
+    description: "DBT ephermeral model for the clean order"  
+  - name: final_orders
+    description: "DBT model for the finale orders model"
+  - name: session
+    description: :DBT Model for the session table"  
+  - name: concat_name
+    description: "DBT Model for the concat name"
+  - name: concat_address
+    description: "DBT Model for the concat address"    
 sources:
   - name: employee
     database: DBT_DB
     schema: PUBLIC
     tables:
       - name: EMPLOYEE_RAW
+  - name: customer
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: CUSTOMER_SRC
+  - name: sales
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: SALES_SRC
+  - name: product
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: PRODUCT_SRC
+  - name: purchase
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: PURCHASE_SRC
+  - name: orders
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: BASE_ORDERS
+  - name: patient
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: PATIENT_SRC
+  - name: session
+    database: DBT_DB
+    schema: PUBLIC
+    tables:
+      - name: SESSION_SRC
